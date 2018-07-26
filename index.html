@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+    @import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Montserrat');
+        </style>
+        <link rel="stylesheet" href="style.css">
+        <script src = "index.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <h1 id = "title">Demographic Form</h1>
+            <p id = "description">
+            This is a quick survey so we can know a little bit about our readership. Haha. Actually, this is just a demo. The form below doesn't have any backend, so clicking submit doesn't do a darn thing.               </p>
+        </header>
+        <form id = "survey-form" name = "form">
+            <label id = "name-label">Name</label>
+            <input 
+                required
+                id = "name"
+                type = "text"
+                placeholder = "Donkey Kong"
+            ></input>
+            <label id = "email-label">Email</label>
+            <input 
+                required
+                id = "email"
+                type = "email"
+                placeholder = "dKong94@nintendo.com"
+            ></input>
+            <label id = "number-label">Age</label>
+            <input 
+                id = "number"
+                type = "number"
+                placeholder = "21"
+                min = "1" 
+                max = "130"
+                step = "1"
+            ></input>
+            <p id = "birth-assignment-q">
+                Do you identify as a gender other than the one you were assigned at birth?
+            </p>
+            <div id = "radio-container">
+                <input 
+                   id = "yes"
+                   type = "radio" 
+                   name = "birth-assignment"
+                   value = "Yes"
+                >
+                <label for = "yes">
+                    Yes
+                </label>
+                <input 
+                   id = "no"
+                   type = "radio" 
+                   name = "birth-assignment"
+                   value = "No"
+                >
+                <label for = "no">
+                    No
+                </label>
+            </div>
+            <p id = "gender-q">What is your gender?</p>
+            
+            <select 
+                    onClick = "addTextInputForOther()"
+                    id = "dropdown"
+                    multiple
+            >
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+                <option value="None">None</option>
+                <option value="Other">Other:</option>
+            </select>
+            <p id = "race-ethnicity-q">
+                What is your race or ethnicity? Check all that apply. 
+            </p>
+            <div id = "check-container">
+                <input 
+                   id = "black"
+                   type = "checkbox" 
+                   name = "1" 
+                   value = "black"
+                > 
+                <label for = "black">
+                    Black
+                </label>
+                <input 
+                   id = "white"
+                   type = "checkbox" 
+                   name = "2" 
+                   value = "white"
+                >
+                <label for = "white">
+                    White
+                </label>
+                <input 
+                   id = "asian"
+                   type = "checkbox"
+                   name = "3"
+                   value = "asian"
+                > 
+                <label for = "asian">
+                    Asian
+                </label>
+                <input 
+                   id = "native-american"
+                   type = "checkbox"
+                   name = "4"
+                   value = "native-american"
+                >
+                <label for = "native-american">
+                    Native American
+                </label>
+                <input 
+                   id = "pacific-islander"
+                   type = "checkbox"
+                   name = "5"
+                   value = "pacific-islander"
+                >
+                <label for = "pacific-islander">
+                    Pacific Islander
+                </label>
+                <input 
+                   id = "latin@"
+                   type = "checkbox"
+                   name = "6"
+                   value = "latin@"
+                > 
+                <label for "latin@"> 
+                    Latin@
+                </label>
+                <input
+                   id = "other"
+                   type = "checkbox"
+                   name = "0"
+                   value = "other"
+                   onClick = "requireText()"
+                > 
+                <label for = "other">
+                    Other:
+                </label>
+                <input
+                   id = "other-race-ethnicity"
+                   type = "text"
+                   placeholder = "Type here"
+                >
+            </div>
+            <p id = "feedback-q">Any questions?</p>
+            <textarea id = "feedback" placeholder = "Type here"></textarea>
+            <button id = "submit">Submit</button>
+        </form>
+    </body>
+</html>
